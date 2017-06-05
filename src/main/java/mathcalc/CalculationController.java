@@ -12,16 +12,16 @@ public class CalculationController {
     private static final String PATTERN = "^-?+\\d+\\.?+\\d*$";
 
     @RequestMapping("/power")
-    public Calculation pow(@RequestParam(value = "base") String b,
-                           @RequestParam(value = "exponent") String e) {
+    public Calculation pow(@RequestParam(value = "base") String baseParam,
+                           @RequestParam(value = "exponent") String exponentParam) {
         List<String> input = new ArrayList<String>();
-        input.add(b);
-        input.add(e);
+        input.add(baseParam);
+        input.add(exponentParam);
         List<String> output = new ArrayList();
         String powValue = "";
-        if (b != null && e != null && b.matches(PATTERN) && e.matches(PATTERN)) {
-            powValue = String.valueOf(Math.pow(Double.valueOf(b),
-                    Double.valueOf(e)));
+        if (baseParam != null && exponentParam != null && baseParam.matches(PATTERN) && exponentParam.matches(PATTERN)) {
+            powValue = String.valueOf(Math.pow(Double.valueOf(baseParam),
+                    Double.valueOf(exponentParam)));
         } else {
             powValue = "Base or/and Exponent is/are not set to numeric value.";
         }
@@ -30,13 +30,13 @@ public class CalculationController {
     }
 
     @RequestMapping(value = "/sqrt/{value:.+}", method = RequestMethod.GET)
-    public Calculation sqrt(@PathVariable(value = "value") String aValue) {
+    public Calculation sqrt(@PathVariable(value = "value") String valueToSqrt) {
         List<String> input = new ArrayList();
-        input.add(aValue);
+        input.add(valueToSqrt);
         List<String> output = new ArrayList();
         String sqrtValue = "";
-        if (aValue != null && aValue.matches(PATTERN)) {
-            sqrtValue = String.valueOf(Math.sqrt(Double.valueOf(aValue)));
+        if (valueToSqrt != null && valueToSqrt.matches(PATTERN)) {
+            sqrtValue = String.valueOf(Math.sqrt(Double.valueOf(valueToSqrt)));
         } else {
             sqrtValue = "Input value is not set to numeric value.";
         }
