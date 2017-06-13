@@ -32,4 +32,8 @@ public class Calculation {
     public void setFunction(String function) {
         this.function = function;
     }
+
+    public String toString(){
+        return "" + this.output + "";
+    }
 }

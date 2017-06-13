@@ -43,4 +43,5 @@ public class CalculationController {
         output.add(sqrtValue);
         return new Calculation(input, output, "sqrt");
     }
+
 }
