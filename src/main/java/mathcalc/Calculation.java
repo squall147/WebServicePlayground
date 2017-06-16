@@ -4,18 +4,19 @@ import java.util.List;
 
 public class Calculation {
 
-    String function;
+    String functionName;
     private List<String> input;
     private List<String> output;
 
     public Calculation(List<String> input, List<String> output, String function) {
-        this.function = function;
+        this.functionName = function;
         this.input = input;
         this.output = output;
     }
 
     public List<String> getInput() {
-        return input;}
+        return input;
+    }
 
     public void setInput(List<String> input) {
         this.input = input;
@@ -26,11 +27,11 @@ public class Calculation {
     public void setOutput(List<String> output) {
         this.output = output;
     }
-    public String getFunction() {
-        return function;
+    public String getFunctionName() {
+        return functionName;
     }
-    public void setFunction(String function) {
-        this.function = function;
+    public void setFunctionName(String functionName) {
+        this.functionName = functionName;
     }
 
     public String toString(){

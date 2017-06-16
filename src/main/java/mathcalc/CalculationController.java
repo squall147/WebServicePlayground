@@ -18,14 +18,14 @@ public class CalculationController {
         input.add(baseParam);
         input.add(exponentParam);
         List<String> output = new ArrayList();
-        String powValue = "";
+        String powerValue = "";
         if (baseParam != null && exponentParam != null && baseParam.matches(PATTERN) && exponentParam.matches(PATTERN)) {
-            powValue = String.valueOf(Math.pow(Double.valueOf(baseParam),
+            powerValue = String.valueOf(Math.pow(Double.valueOf(baseParam),
                     Double.valueOf(exponentParam)));
         } else {
-            powValue = "Base or/and Exponent is/are not set to numeric value.";
+            powerValue = "Base or/and Exponent is/are not set to numeric value.";
         }
-        output.add(powValue);
+        output.add(powerValue);
         return new Calculation(input, output, "power");
     }
 
